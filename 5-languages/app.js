@@ -1,4 +1,4 @@
-const language = prompt('Введите язык (en/ru/de):');
+const language = prompt('Введите язык (en/ru/de):').toLowerCase();
 
 switch (language) {
     case 'en':

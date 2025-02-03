@@ -7,6 +7,6 @@ const positionLong = 1;
 const latDifference = addressLat - positionLat;
 const longDifference = addressLong - positionLong;
 
-const distance = Math.sqrt(latDifference ** 2 + longDifference ** 2);
+const distance = (latDifference ** 2 + longDifference ** 2) ** 0.5;
 
 console.log(distance);
