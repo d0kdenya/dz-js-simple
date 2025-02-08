@@ -1,7 +1,17 @@
-const USD_RUB_EXCHANGE = 99.94;
-const EUR_RUB_EXCHANGE = 102.49;
+/*
+    Написать функцию, которая получает на вход строку с:
+    - суммой средств - 1000
+    - валютой средств - руб
+    - целевой валютой - $
+    Возвращает число в новой валюте, если конвертация
+    поддерживается, или null, если нет. Ставки конвертации хранятся
+    внутри функции.
+*/
 
 function convertCurrency(sum, currencyFrom, currencyTo) {
+    const USD_RUB_EXCHANGE = 99.94;
+    const EUR_RUB_EXCHANGE = 102.49;
+
     switch (currencyFrom) {
         case 'USD':
             switch (currencyTo) {
