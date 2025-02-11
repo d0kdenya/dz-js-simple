@@ -29,12 +29,17 @@ function crypto(password) {
 }
 
 function check(hashedPassword, password) {
+    if (!hashedPassword || !password) {
+        return false;
+    }
     return crypto(hashedPassword) === password;
 }
 
 const password = 'password';
+const encrypted = crypto(password);
+const decrypted = crypto(encrypted);
 
-const hashedPasswordOne = crypto(password);
-
-console.log(hashedPasswordOne);
-console.log(check(hashedPasswordOne, password));
+console.log('Пароль: ', password);
+console.log('Зашифрованный пароль: ', encrypted);
+console.log('Проверка пароля (обратимость): ', decrypted === password);
+console.log('Проверка пароля (check): ', check(encrypted, password));
